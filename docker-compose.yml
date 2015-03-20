@@ -1,5 +1,5 @@
 postgresql:
-  image: fesnault/postgresql
+  image: registry.ovyka.com/postgresql
   ports:
     - "127.0.0.1:5432:5432"
   volumes:
@@ -10,13 +10,13 @@ postgresql:
     DBPASS: pgrootpass
     DB: atlassian
 ovykaconfig:
-  image: fesnault/ovyka-crucible-config
+  image: registry.ovyka.com/ovyka-crucible-config
 crucibledata:
-  image: fesnault/crucible-data
+  image: registry.ovyka.com/crucible-data
   volumes:
     - /ovyka/crucible/data:/opt/atlassian/crucible/data
 crucible:
-  image: fesnault/crucible
+  image: registry.ovyka.com/crucible
   ports:
     - "127.0.0.1:8060:8060"
   volumes_from:
